@@ -6,6 +6,8 @@ import Shimmer from '../commonComponent/Shimmer'
 function Body() {
     const [productsData, setProductsData] = useState([])
     const[tempData,setTempData]=useState([])
+    const[inputText,setInputText]=useState("")
+
     const [render, setRender] = useState(false)
     // const [productsDatas,setProduct]= useState(products)
     const data = async () => {
@@ -41,7 +43,7 @@ else {
         <div className='body'>
             <article className='search'>
                 {/* <h2>search</h2> */}
-                <button onClick={() => {
+                {/* <button onClick={() => {
                     if (render) {
                         setRender(false)
                     }
@@ -50,7 +52,21 @@ else {
                     }
                 }}>
                     Data
-                </button>
+                </button> */}
+                <input type="text" value={inputText} onChange={(event)=>{
+                    setInputText(event.target.value)
+                    // console.log(inputText);
+                }} />
+
+                <button onClick={()=>{
+                    const inputT=inputText.toLowerCase();
+                    let filteredD=tempData.filter((ele) => {
+                        return ele.title.toLowerCase().includes(inputT)
+                    })
+                    setProductsData(filteredD)   
+                           
+                }}>Search</button>
+
                 <button onClick={(() => {
                     let filteredData = tempData.filter((ele) => {
                         return ele.price < 500
