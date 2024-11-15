@@ -1,8 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+// subscribing to the store by using useSelector hook 
+
 
 // const style={padding:"10px"}
 function Nav() {
-    
+  const data = useSelector((store) => store.cart.items)
+  
   return (
     // fragments
     // <></> symbol where we can write multiple divs inside div.
@@ -13,9 +19,10 @@ function Nav() {
                    </aside>
                    <aside className='navLst'>
                            <ul>
-                               <li>Home</li>
-                               <li>Log in</li>
-                               <li>Contact Us</li>
+                              <Link to='/'> <li>Home</li></Link>
+                              <Link to= '/login'><li key={2}>Log in</li></Link> 
+                               <Link to='/contact'><li key={3}>Contact Us</li></Link>
+                              <Link to="/cart"><li key={1}>Cart {data.length} items</li></Link> 
                            </ul>
                    </aside>
           </section>

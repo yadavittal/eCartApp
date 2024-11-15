@@ -1,4 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+.oddCard {
+  /* absolute p-2 bg-slate-900 text-slate-50 */
+  position:absolute;
+  padding: 10px 0px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 10px;
+}
+.btns {
+  /* bg-black text-white p-4 m-1 rounded-lg */
+  background-color: black;
+  color: white;
+  padding: 10px 15px ;
+  margin: 10px;
+  border-radius: 10px;
+}
 .navBar{
   display: flex;
   justify-content: space-between;
@@ -25,12 +44,12 @@ ul li {
   border-style: none;
   border-radius: 10px;
   padding: 20px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   background-color: rgb(178, 189, 189);
-  /* height: 300px; */
+  height: 540px;
   line-height: 30px;
-  min-height: 350px;
-  width: 250px;
+  /* min-height: 300px; */
+  width: 320px;
 }
 
 .cardImg {
@@ -51,7 +70,8 @@ ul li {
 .cardHolder {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: center;
+  align-items: center;
   gap:50px
 }
 
